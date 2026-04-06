@@ -17,9 +17,6 @@
 # ]
 
 
-
-
-
 # calc/urls.py
 from django.urls import path
 from .views.menu.category_views import CategoryListCreateView
@@ -27,6 +24,7 @@ from .views.menu.category_detail_view import CategoryDetailView
 from .views.menu.item_views import ItemListCreateView
 from .views.auth.register_views import RegisterView
 from .views.auth.login_views import LoginView
+from .views.home.about.about_views import AboutDetailView, AboutView
 
 urlpatterns = [
     path('categories', CategoryListCreateView.as_view(), name='category-list'),
@@ -34,4 +32,6 @@ urlpatterns = [
     path('items', ItemListCreateView.as_view(), name='item-list'),
     path('register/', RegisterView.as_view(), name='register'),
     path('login/', LoginView.as_view(), name='login'),
+     path('about', AboutView.as_view(), name='about'), 
+         path('about/<int:id>/', AboutDetailView.as_view(), name='about-detail'), 
 ]

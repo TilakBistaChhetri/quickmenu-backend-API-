@@ -1,10 +1,5 @@
 
 
-
-
-
-
-
 from rest_framework import generics, status
 from calc.models.menu.category import Category
 from calc.serializers import CategorySerializer
@@ -70,7 +65,7 @@ class CategoryListCreateView(generics.ListCreateAPIView):
             self.perform_create(serializer)
 
             return api_response(
-                data=[serializer.data],   # ✅ SAME FORMAT AS GET
+                data=[serializer.data],   
                 message=["Category created successfully"],
                 status="success",
                 remark="category_created",
