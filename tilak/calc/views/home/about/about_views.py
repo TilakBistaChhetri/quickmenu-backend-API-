@@ -1,4 +1,5 @@
 
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -15,7 +16,7 @@ class AboutView(APIView):
             "remark": "about_fetched",
             "status": "success",
             "message": ["About data retrieved successfully"],
-            "data": serializer.data
+            "data": serializer.data  # already a list
         })
 
     def post(self, request):
@@ -26,7 +27,7 @@ class AboutView(APIView):
                 "remark": "about_created",
                 "status": "success",
                 "message": ["About entry created successfully"],
-                "data": serializer.data
+                "data": [serializer.data]  # wrap in list
             }, status=status.HTTP_201_CREATED)
         return Response({
             "remark": "validation_error",
@@ -53,7 +54,7 @@ class AboutDetailView(APIView):
                 "remark": "about_fetched",
                 "status": "success",
                 "message": ["About entry retrieved successfully"],
-                "data": serializer.data
+                "data": [serializer.data]  # wrap in list
             })
         return Response({
             "remark": "not_found",
@@ -79,7 +80,7 @@ class AboutDetailView(APIView):
                 "remark": "about_updated",
                 "status": "success",
                 "message": ["About entry updated successfully"],
-                "data": serializer.data
+                "data": [serializer.data]  # wrap in list
             })
         return Response({
             "remark": "validation_error",
