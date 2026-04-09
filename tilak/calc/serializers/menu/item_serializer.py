@@ -7,6 +7,7 @@ class ItemSerializer(serializers.ModelSerializer):
         # Exclude categoryId or category_name completely
         fields = [
             'id',
+            'categoryId',
             'item_name',
             'price',
             'availability',

@@ -69,6 +69,15 @@ class ItemListCreateView(generics.ListCreateAPIView):
             remark="validation_error",
             http_code=status.HTTP_400_BAD_REQUEST
         )
+    
+
+
+
+
+
+
+
+    
 
         # self is Class instance 
         # request is HTTP request data (headers, body, user, etc.)
