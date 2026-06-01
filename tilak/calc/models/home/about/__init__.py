@@ -1,4 +1,0 @@
-
-
-
-from .about import About

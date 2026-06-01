@@ -1,7 +1,5 @@
 
 
-
-
 """
 Django settings for tilak project.
 
@@ -13,7 +11,6 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
-
 import os
 from pathlib import Path
 
@@ -30,25 +27,31 @@ SECRET_KEY = 'django-insecure-y_x2mx!q7x$mh5ly93l+88@^arf0b%^p=j@a9q59t3ekq(wyf%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = []
+
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    '192.168.1.71'
+    '192.168.1.65',
+    '10.87.212.207:8000',
+    '0.0.0.0',
 ]
 # Application definition
 
+
 INSTALLED_APPS = [
-    'django.contrib.admin', #  The admin site. You’ll use it shortly.
-    'django.contrib.auth', #An authentication system.
-    'django.contrib.contenttypes', #A framework for content types.
-    'django.contrib.sessions', #A session framework.
-    'django.contrib.messages', # A messaging framework.
-    'django.contrib.staticfiles', #A framework for managing static files.
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
     'calc',
-    'rest_framework'
+    'rest_framework',
+    'corsheaders',
 ]
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # MUST BE FIRST
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -125,8 +128,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# MEDIA_URL = '/media'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 MEDIA_URL = '/media/'          
 MEDIA_ROOT = BASE_DIR / 'media'
+CORS_ALLOW_ALL_ORIGINS = True
+
+
+

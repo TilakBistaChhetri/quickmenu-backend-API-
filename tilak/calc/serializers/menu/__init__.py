@@ -1,7 +1,0 @@
-
-
-
-
-
-from .category_serializer import CategorySerializer
-from .item_serializer import ItemSerializer
