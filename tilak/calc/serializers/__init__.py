@@ -1,9 +1,5 @@
 
 
-# from .home.contact.contact_serializer import ContactSerializer
-# from .menu import CategorySerializer
-# from .menu import ItemSerializer
-
 
 
 from .contact_serializer import ContactSerializer

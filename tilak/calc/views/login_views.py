@@ -28,3 +28,6 @@ class LoginView(generics.GenericAPIView):
             remark="login_failed",
             http_code=status.HTTP_400_BAD_REQUEST
         )
+    
+
+    

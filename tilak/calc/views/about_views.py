@@ -111,3 +111,6 @@ class AboutDetailView(APIView):
             "message": ["About entry deleted successfully"],
             "data": []
         }, status=status.HTTP_204_NO_CONTENT)
+    
+
+    
