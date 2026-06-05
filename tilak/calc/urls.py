@@ -2,9 +2,10 @@
 
 
 
+
+
+
 from django.urls import path
-
-
 from .views.contact_details_views import ContactDetailsView
 from .views.contact_views import ContactListCreateView
 from .views.category_views import CategoryListCreateView
@@ -26,11 +27,12 @@ urlpatterns = [
     path('about', AboutView.as_view(), name='about'), 
     path('about/<int:id>/', AboutDetailView.as_view(), name='about-detail'), 
     path('contact', ContactListCreateView.as_view(), name='contact-list-create'),
-  
- 
    path('contact/<int:id>/', ContactDetailsView.as_view(), name='contact-detail')
 
 ]
+
+
+
 
 
 

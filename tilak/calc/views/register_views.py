@@ -4,17 +4,9 @@
 
 
 
-
-
-
-
-
-# calc/views.py
 from rest_framework import generics, status
 from django.contrib.auth.models import User
 from calc.serializers.register_serializer import RegisterSerializer
-
-
 from utils.response_wrapper import api_response
 
 
@@ -29,12 +21,14 @@ class RegisterView(generics.CreateAPIView):
             self.perform_create(serializer)
 
             return api_response(
-                data=[serializer.data],   # same as category format
+                data=[serializer.data],  
                 message=["User registered successfully"],
                 status="success",
                 remark="user_registered",
                 http_code=status.HTTP_201_CREATED
             )
+
+
 
         return api_response(
             data=serializer.errors,
@@ -49,6 +43,22 @@ class RegisterView(generics.CreateAPIView):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #     """
 
 #     CategoryListCreateView:
@@ -57,7 +67,5 @@ class RegisterView(generics.CreateAPIView):
 #     -You named it CategoryListCreateView because it will list categories and allow creating new categories.
 
 #     """
-
-
 
 

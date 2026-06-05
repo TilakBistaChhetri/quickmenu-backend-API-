@@ -31,3 +31,13 @@ class LoginSerializer(serializers.Serializer):
             raise serializers.ValidationError({"detail": "Email and password are required."})
 
         return attrs
+    
+    
+
+
+
+
+
+
+
+

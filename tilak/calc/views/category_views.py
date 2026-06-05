@@ -31,49 +31,13 @@ class CategoryListCreateView(generics.ListCreateAPIView):
     
 
 
-    # PATCH / PUT
-    def update(self, request, *args, **kwargs):
-        partial = True  # PATCH = partial update
-        instance = self.get_object()
-        serializer = self.get_serializer(instance, data=request.data, partial=partial)
-        if serializer.is_valid():
-            serializer.save()
-            return api_response(
-                data=[serializer.data],
-                message=["Category updated successfully"],
-                status="success",
-                remark="category_updated"
-            )
-        return api_response(
-            data=serializer.errors,
-            message=["Validation failed"],
-            status="error",
-            remark="validation_error",
-            http_code=status.HTTP_400_BAD_REQUEST
-        )
-    
-
-
-
-    # DELETE
-    def destroy(self, request, *args, **kwargs):
-        instance = self.get_object()
-        instance.delete()
-        return api_response(
-            data=[],
-            message=["Category deleted successfully"],
-            status="success",
-            remark="category_deleted"
-        )
-    
-
-
     # POST
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
 
         if serializer.is_valid():
-            self.perform_create(serializer)
+            #self.perform_create(serializer)
+            serializer.save(client=self.request.user.client)
 
             return api_response(
                 data=[serializer.data],   
