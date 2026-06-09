@@ -1,10 +1,6 @@
 
 
 
-
-
-
-
 from rest_framework import generics, status
 from calc.models.item import Item
 from calc.serializers import ItemSerializer

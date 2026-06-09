@@ -1,15 +1,12 @@
 
 
 
-
-
-#from tilak.calc.models.contact import Contact
 from calc.models.contact import Contact
 from calc.serializers.contact_serializer import ContactSerializer
-#from tilak.calc.serializers.contact_serializer import ContactSerializer
+
 from rest_framework import generics, status
 
-#from tilak.utils.response_wrapper import api_response
+
 from utils.response_wrapper import api_response
 
 class ContactDetailsView(generics.RetrieveUpdateDestroyAPIView):
@@ -53,7 +50,3 @@ def update(self, request, *args, **kwargs):
         remark = 'validation error',
         http_code = status.HTTP_400_BAD_REQUEST
     ) 
-
-
-
-

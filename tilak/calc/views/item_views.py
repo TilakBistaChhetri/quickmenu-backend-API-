@@ -3,13 +3,6 @@
 
 
 
-
-
-
-
-
-
-
 from rest_framework import generics, status
 from calc.models.item import Item
 from calc.models.category import Category
@@ -82,9 +75,6 @@ class ItemListCreateView(generics.ListCreateAPIView):
             http_code=status.HTTP_400_BAD_REQUEST
         )
     
-
-
-
 
 
 

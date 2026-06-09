@@ -8,17 +8,29 @@
 
 from django.db import models
 
-# from tilak.calc.models.client import Client
-from .client import Client
+
 
 class Category(models.Model):
-    client = models.ForeignKey(Client, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=100)
- 
     image = models.ImageField(upload_to='category/', default='category/default.png')
 
-    def __str__(self):
-        return self.name
+    restaurant = models.ForeignKey(
+        'Restaurant',
+        on_delete=models.CASCADE,
+        related_name='categories',
+        null=True,
+        blank=True
+    )
+
+
+
+
+
+# calc/models/category.py
+
+
+
+
 
 
 

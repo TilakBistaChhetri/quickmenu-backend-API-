@@ -1,20 +1,13 @@
 
 
-
-
-
-
-
-
-
-
-
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework import generics, status
 from calc.serializers.login_serializer import LoginSerializer
 from utils.response_wrapper import api_response
 
 
+
+    
 class LoginView(generics.GenericAPIView):
     serializer_class = LoginSerializer
 
@@ -41,7 +34,7 @@ class LoginView(generics.GenericAPIView):
                 remark="login_success",
                 http_code=status.HTTP_200_OK
             )
-        
+
         return api_response(
             data=serializer.errors,
             message=["Login failed"],
@@ -49,4 +42,3 @@ class LoginView(generics.GenericAPIView):
             remark="login_failed",
             http_code=status.HTTP_400_BAD_REQUEST
         )
-    

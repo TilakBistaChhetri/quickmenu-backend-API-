@@ -5,7 +5,7 @@
 
 from django.db import models
 from calc.models.category import Category
-from .client import Client
+
 
 class Item(models.Model):
     categoryId = models.ForeignKey(
@@ -13,7 +13,7 @@ class Item(models.Model):
         on_delete=models.CASCADE,
         related_name='items'
     )
-    client = models.ForeignKey(Client, on_delete=models.CASCADE, null=True, blank=True)
+
     item_name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     availability = models.BooleanField(default=True)
@@ -24,7 +24,9 @@ class Item(models.Model):
 
     def __str__(self):
         return f"{self.item_name} - {self.categoryId.name}"
-    
+
+
+
 
     
    # auto_now_add=True means jati bela database maa first time record create hunxa teti belako date auto set hunxa

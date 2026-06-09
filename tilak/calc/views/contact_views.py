@@ -6,9 +6,6 @@
 
 
 
-
-
-
 from rest_framework import generics, status
 from calc.serializers import ContactSerializer
 from utils.response_wrapper import api_response
@@ -61,14 +58,4 @@ class ContactListCreateView(generics.ListCreateAPIView):
 
 
 
-
-
-    
-
-
-
-
-
-
-    
 

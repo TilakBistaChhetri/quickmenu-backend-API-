@@ -1,6 +1,3 @@
-
-
-
 from rest_framework import generics, status
 from calc.models.category import Category
 from calc.serializers import CategorySerializer
@@ -60,10 +57,3 @@ class CategoryDetailView(generics.RetrieveUpdateDestroyAPIView):
             status="success",
             remark="category_deleted"
         )
-    
-
-
-
-
-
-
