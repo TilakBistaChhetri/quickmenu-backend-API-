@@ -24,44 +24,8 @@ urlpatterns = [
     # path('about', AboutView.as_view(), name='about'), 
     # path('about/<int:id>/', AboutDetailView.as_view(), name='about-detail'), 
     path('contact', ContactListCreateView.as_view(), name='contact-list-create'),
-   path('contact/<int:id>/', ContactDetailsView.as_view(), name='contact-detail')
-
+    path('contact/<int:id>/', ContactDetailsView.as_view(), name='contact-detail')
 ]
-
-
-
-
-
-
-
-# urlpatterns = [
-#     #path('restaurants/<int:restaurant_id>/categories/', CategoryListCreateView.as_view(), name='category-list'),
-    
-#     path('restaurants/<int:restaurant_id>/categories/<int:id>/', CategoryDetailView.as_view(), name='category-detail'),
-
-#     path('restaurants/<int:restaurant_id>/items/<int:category_id>/', ItemListCreateView.as_view(), name='item-list'),
-#     path('restaurants/<int:restaurant_id>/item/<int:id>/', ItemDetailView.as_view(), name='item-detail'),
-
-#     path('register/', RegisterView.as_view(), name='register'),
-#     path('login/', LoginView.as_view(), name='login'),
-
-#     # path('restaurants/<int:restaurant_id>/about/', AboutView.as_view(), name='about'),
-#     # path('restaurants/<int:restaurant_id>/about/<int:id>/', AboutDetailView.as_view(), name='about-detail'),
-
-#     path('restaurants/<int:restaurant_id>/contact/', ContactListCreateView.as_view(), name='contact-list-create'),
-#     path('restaurants/<int:restaurant_id>/contact/<int:id>/', ContactDetailsView.as_view(), name='contact-detail'),
-
-
-#     path(
-#     'categories/',
-#     CategoryListCreateView.as_view(),
-#     name='category-list'
-# ),
-# ]
-
-
-
-
 
 
 

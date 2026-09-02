@@ -50,3 +50,11 @@ def update(self, request, *args, **kwargs):
         remark = 'validation error',
         http_code = status.HTTP_400_BAD_REQUEST
     ) 
+
+
+
+    
+
+
+
+    
